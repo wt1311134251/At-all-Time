@@ -8,7 +8,8 @@ import store from "./store"
 //导入vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
-
+//引入 rem
+import rem from "../static/js/rem"
 Vue.use(Vant);
 Vue.config.productionTip = false
 
