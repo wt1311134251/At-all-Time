@@ -1,16 +1,31 @@
 <template>
-    <div>
-      Home 页面
-      <van-button type="warning">警告按钮</van-button>
+    <div class="zlf_home">
+      <section>
+        <router-view></router-view>
+      </section>
+      <Foot></Foot>
     </div>
+
 </template>
 
 <script>
+  //引入 底部组件
+  import Foot from "./Foot";
     export default {
-        name: "Home.vue"
+        name: "Home.vue",
+      components:{Foot}
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .zlf_home{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    section{
+      flex-grow: 1;
+      overflow-y: auto;
+    }
 
+  }
 </style>

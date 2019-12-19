@@ -10,6 +10,12 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 //引入 rem
 import rem from "../static/js/rem"
+
+//图片懒加载  vant 功能
+import { Lazyload } from 'vant';
+// options 为可选参数，无则不传
+Vue.use(Lazyload);
+
 Vue.use(Vant);
 Vue.config.productionTip = false
 
