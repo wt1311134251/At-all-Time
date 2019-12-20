@@ -35,7 +35,11 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-
+    {
+      path:'/teacher',
+      name:'teacher',
+      component:Teacher
+    },
     {
       path:"/info",
       name:"info",
@@ -50,11 +54,6 @@ export default new Router({
       path:"/class",
       name:"class",
       component:Class,
-    },
-    {
-      path:"/",
-      name: 'home',
-      component:Record
     },
     {
       path:'/oto',
