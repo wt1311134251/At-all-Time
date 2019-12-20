@@ -58,7 +58,7 @@
         name: "Teacher",
       methods:{
         zlf_ret(){
-          this.router.go(-1)
+          this.$router.go(-1)
         }
       }
 

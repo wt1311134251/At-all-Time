@@ -22,7 +22,6 @@ import Info from '../components/person/info'
 import Setsex from '../components/person/setsex'
 //引入Class组件
 import Class from '../components/person/class'
-//引入teacher组件
 // <<<<<<< HEAD
 // import Record from '../components/Record/record'
 // =======
@@ -41,11 +40,10 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path:"/teacher",
-      name:"teacher",
+      path:'/teacher',
+      name:'teacher',
       component:Teacher
     },
-
     {
       path:"/info",
       name:"info",
@@ -122,7 +120,7 @@ export default new Router({
   ]
   })
 
-
+      
 
 
 

@@ -44,11 +44,13 @@
                   
                </div>
           </div>
+      practise
     </div>
 </template>
 
 <script>
     export default {
+        name:'practise',
            data() {
                return {
                    show:0,
@@ -149,4 +151,6 @@
     .or{
         color:orange!important;
     }
+     
 </style>
+

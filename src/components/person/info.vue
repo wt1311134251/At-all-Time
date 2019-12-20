@@ -96,7 +96,7 @@
         },
         showPopup() {
           this.lsh_show1 = true;
-        },
+        },  
         showPopup1() {
           this.lsh_show2 = true;
         },
