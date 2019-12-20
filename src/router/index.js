@@ -6,6 +6,11 @@ import Home from "../components/Home/Home"
 
 
 Vue.use(Router);
+
+
+
+Vue.use(Router);
+
 //引入课程详情
 import Teacher from "../components/Index/Teacher";
 //引入 index组件
@@ -18,6 +23,12 @@ import Person from "../components/person/Person";
 import Practise from "../components/Practise/practise"
 //引入 Record 组件
 import Record from "../components/Record/record";
+//引入 info 组件
+import Info from '../components/person/info'
+//引入setsex组件
+import Setsex from '../components/person/setsex'
+//引入Class组件
+import Class from '../components/person/class'
 
 
 import Record from '../components/Record/record'
@@ -37,6 +48,14 @@ export default new Router({
       name:"Person",
       component:Person
     },
+
+
+Vue.use(Router);
+
+
+export default new Router({
+  routes: [
+   
     {
       path:"/info",
       name:"info",
@@ -51,6 +70,12 @@ export default new Router({
       path:"/class",
       name:"class",
       component:Class,
+      path: "/class",
+      name: "class",
+      component: Class
+    },
+    {
+      path:"/",
       name: 'home',
       component:Record
     },
@@ -102,6 +127,7 @@ export default new Router({
           component:Record
         }
       ]
+
 
     }
   ]
