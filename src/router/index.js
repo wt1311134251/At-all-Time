@@ -48,7 +48,7 @@ export default new Router({
     {
       path:"/coureXiang",
       name:"coureXiang",
-      component:CoureXiang
+      component:coureXiang
     },
     {
       path:"/concern",
@@ -74,11 +74,6 @@ export default new Router({
       path:'/teacher',
       name:'teacher',
       component:Teacher
-    },
-    {
-      path:'/xiang',
-      name:'Xiang',
-      component:Xiang
     },
     {
       path:"/info",
