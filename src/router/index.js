@@ -1,10 +1,9 @@
 ﻿import Vue from 'vue'
 import Router from 'vue-router'
-import Course from "../components/Course/course.vue"
-import Courtow from "../components/Course/coureXiang.vue"
+//引入Home页面
+
 import Home from "../components/Home/Home"
-// Vue.use(Router);
-Vue.use(Router);
+
 //引入课程详情
 import Teacher from "../components/Index/Teacher";
 //引入 index组件
@@ -23,29 +22,24 @@ import Info from '../components/person/info'
 import Setsex from '../components/person/setsex'
 //引入Class组件
 import Class from '../components/person/class'
-import Record from '../components/Record/record'
+// <<<<<<< HEAD
+// import Record from '../components/Record/record'
+// =======
+
+// >>>>>>> d9fc6b9170fd23210b4c33d5c6fb3c1301d5e17d
 import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
-Vue.use(Router)
+Vue.use(Router);
+
+
+
+
+
 
 export default new Router({
   routes: [
-    {
-      path: '/Course',
-      name: 'Course',
-      component: Course
-    },
-    {
-      path: '/',
-      name: 'Courtow',
-      component: Courtow
-    },
-    {
-      path:"/person",
-      name:"Person",
-      component:Person
-    },
+
     {
       path:"/info",
       name:"info",
@@ -60,15 +54,12 @@ export default new Router({
       path:"/class",
       name:"class",
       component:Class,
-      path: "/class",
-      name: "class",
-      component: Class
     },
-    {
-      path:"/",
-      name: 'home',
-      component:Record
-    },
+    // {
+    //   path:"/",
+    //   name: 'home',
+    //   component:Record
+    // },
     {
       path:'/oto',
       name:'oto',
@@ -80,9 +71,13 @@ export default new Router({
       component:Search
     },
     {
-      path:'/oto-plan',
-      name:'oto-plan',
-      component:Otop,
+      path:"/oto-plan",
+      name:"oto-plan",
+      component:Otop
+    },
+    {
+      path:'/',
+      name:'home',
       component: Home,
       redirect:"/index",
       children:[
