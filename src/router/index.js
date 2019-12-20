@@ -31,11 +31,7 @@ import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
 Vue.use(Router);
-
-
-
-
-
+import Dan from '../components/person/dan';
 
 export default new Router({
   routes: [
@@ -114,9 +110,16 @@ export default new Router({
           path:'record',
           name:'record',
           component:Record
-        }
+        },
+        
       ]
-    }
+    },
+    //实验
+    {
+      path:"/dan/:name",
+      name:"dan",
+      component:Dan
+    },
   ]
   })
 

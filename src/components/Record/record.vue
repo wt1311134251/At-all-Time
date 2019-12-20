@@ -29,8 +29,7 @@
                         <div class="image">
                             <img src="/static/no-message.8d3ca5af.png" alt="">
                         </div>
-                        <p>还没有取消上课记录哦</p>
-                        
+                        <p>还没有取消上课记录哦</p>  
                     </div>
                 </van-tab>
             </van-tabs>
