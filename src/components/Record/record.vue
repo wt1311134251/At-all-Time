@@ -72,6 +72,7 @@
         color: #595959;
         position: absolute;
         top: 0;
+        z-index: 1000;
         h3{
             font-weight: normal;
         }

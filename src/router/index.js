@@ -30,6 +30,8 @@ import Otop from '../components/Record/oto-plan'
 import Concern from '../components/person/concer'
 //引入 collect 页面（我的收藏）
 import Collect from '../components/person/collect'
+//引入登录页面
+import Login from '../components/person/login'
 
 Vue.use(Router);
 
@@ -39,11 +41,17 @@ Vue.use(Router);
 
 
 export default new Router({
+
   routes: [
     {
       path:"/concern",
       name:"concern",
       component:Concern
+    },
+    {
+      path:"/login",
+      name:"login",
+      component:Login
     },
     {
       path:"/collect",
@@ -114,6 +122,7 @@ export default new Router({
           name:"person",
           component:Person,
         },
+
         //  练习
         {
           path:'practise',
