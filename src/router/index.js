@@ -1,18 +1,10 @@
 ﻿import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
-//引入Home页面
-// import Home from "../components/Home/Home"
 import Course from "../components/Course/course.vue"
 import Courtow from "../components/Course/coureXiang.vue"
-=======
-// 引入Home页面
 import Home from "../components/Home/Home"
-<<<<<<< HEAD
-
-
+// Vue.use(Router);
 Vue.use(Router);
-=======
 //引入课程详情
 import Teacher from "../components/Index/Teacher";
 //引入 index组件
@@ -25,11 +17,17 @@ import Person from "../components/person/Person";
 import Practise from "../components/Practise/practise"
 //引入 Record 组件
 import Record from "../components/Record/record";
-
->>>>>>> edc72371afe8dc67393c486a3d9d41c501eeb933
-
+//引入 info 组件
+import Info from '../components/person/info'
+//引入setsex组件
+import Setsex from '../components/person/setsex'
+//引入Class组件
+import Class from '../components/person/class'
+import Record from '../components/Record/record'
+import Oto from '../components/Record/oto'
+import Search from '../components/Record/Search'
+import Otop from '../components/Record/oto-plan'
 Vue.use(Router)
->>>>>>> dev
 
 export default new Router({
   routes: [
@@ -40,12 +38,8 @@ export default new Router({
     },
     {
       path: '/',
-<<<<<<< HEAD
       name: 'Courtow',
       component: Courtow
-=======
-<<<<<<< HEAD
-      redirect:"/person"
     },
     {
       path:"/person",
@@ -65,9 +59,30 @@ export default new Router({
     {
       path:"/class",
       name:"class",
-      component:Class
-=======
+      component:Class,
+      path: "/class",
+      name: "class",
+      component: Class
+    },
+    {
+      path:"/",
       name: 'home',
+      component:Record
+    },
+    {
+      path:'/oto',
+      name:'oto',
+      component:Oto
+    },
+    {
+      path:'/search',
+      name:'search',
+      component:Search
+    },
+    {
+      path:'/oto-plan',
+      name:'oto-plan',
+      component:Otop,
       component: Home,
       redirect:"/index",
       children:[
@@ -102,9 +117,11 @@ export default new Router({
           component:Record
         }
       ]
-
->>>>>>> dev
->>>>>>> edc72371afe8dc67393c486a3d9d41c501eeb933
     }
   ]
-})
+  })
+
+      
+
+
+
