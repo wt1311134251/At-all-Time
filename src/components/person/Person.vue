@@ -2,13 +2,13 @@
     <div class="person">
       <div class="lsh_top">
         <div class="lsh_login">
-          <li @click.self="lsh_self()" class="lsh_message">
+          <li @click="lsh_self()" class="lsh_message">
             <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/avatar.jpg" alt="">
             <div class="lsh_phone">
               <p>138****7626</p>
             </div>
             <div class="lsh_yueke">
-              <p>去约课</p>
+              <p @click.stop="yueke()">去约课</p>
             </div>
           </li>
           <div class="lsh_mine">
@@ -18,21 +18,21 @@
                 <p class="lsh_name">我的特色课</p>
                 <p class="lsh_note">已购买课程的学习</p>
               </li>
-              <li>
+              <router-link tag="li" to="/record">
                 <h1 class="lsh_count">0</h1>
-                <p class="lsh_name">剩余学习币</p>
-                <p class="lsh_note">查看剩余学习币</p>
-              </li>
+                <p class="lsh_name">一对一辅导</p>
+                <p class="lsh_note">我的一对一老师辅导</p>
+              </router-link>
               <li>
                 <h1 class="lsh_count">0.00</h1>
-                <p class="lsh_name">我的特色课</p>
-                <p class="lsh_note">已购买课程的学习</p>
+                <p class="lsh_name">剩余学习币</p>
+                <p class="lsh_note">查看剩余学习币</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="lsh_share">
+      <div @click="lsh_show = true" class="lsh_share">
         <div class="lsh_you">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA2CAYAAACbZ/oUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDFGMzI1MUM3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDFGMzI1MUQ3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MUYzMjUxQTc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0MUYzMjUxQjc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuSIwewAAATUSURBVHja7JrbbxR1FMdnl7LlJkq1BbnIxUJi8a6tgoBaEhQxIsYHfVIT4y2++GB89Z8wvhgflTcSFKN4t6IRFcQiAtZSVAR7RWlV2rLj98TPhMm4092dnS1Td07yybbb2dnf9/c7v3PO70wzrus6RWyOuA8u4b2iH5pEy/B6WuyE4bCL64rczP5+v3hSXCfqneTaWbFIZMV2MR5FcIPYJtY5ybcc4+wVu3n9j2WLuMpCsdiZWraYcWfKFWx/uyzhblzI6hl3tlzBZtOcqWnTogatfIURuUt8L37n9wXielbAs4PiMJHV9uHlok3MjvidLuOOJDiqDYi94h3xhejn/aVik3hAzBD7SCNfkVbsveXiXrG1GvGjGoLziHhJdIoxn5d0i/1MiNkO0cM1nv3AZJ0Sz7DiiRZ8VLwhvg6ZjEHxKpMwMME1r5AWn4tzcNmYxf4pPhEHilzXHyLWb7bCHWH5NCmCh3HZ/pjuZ8HuRJIFnxNnxGhM9xvnXm5SBdeRcmbGWC7ODKuakiD4InLo/BjLxCVJdmnLo7dBpat8jbhbzEuyYK+4eFDcWUHau0I8juDEFx5mdxDA/iJNnStT7AviYXHxVBE8gxV2oaNE0SvFs+KhuF25VMGZCiLkLLEZobZ1PpqoqJetEk+JR6qxsqUI9lYnV+ExbSuip4vPyNPBSV0mnhaPxSB2etTjYd5X6TRzbdTV3kIXwurj1ylBvaDZKp5gYuJY2VEnpJ9VikvbQeBFcaNoJ900RuxC3EqqMo95jcm0HtTzYoOYG4PYHuLF8bDtk/G1aXMk+j8K1MJ1DPgmsP12dcRDuh0ZX+bwYMFpWwwiD3Ng6aKWt6bC2TDBFg2bxFrRIvo4mHdzUhkukGdbWfE2uhgLymgH5emC2F67MmIbqZdxHhOfsqpfBs7VDgvSxHdZ7Dhlgh/VD7cz0zkCzEk6FR+Id/mC0UDBMpuy7y5xD5VRAzevho2S120130LkUTzl7wJp0RZhvdhIirPPbTfB1nVYU6D+HRG/shrmJh/TiglG2UsRvsq3z1fHWfDTTOjg9Yj4mfNy0BbhdWvonS0lWNbTQtplgo8z4IkG+Bt75JD4XHzL7AYDQwt7+1rn3ycVNzPTURpx34lvfG0h2/s/FrjWTmc34GFXMYbVIRF/yASfLjMdHGS29yL8lwJdiXoi+yZWfCGzPafIvU9wP/OqPRQrXQWua+CeS3wZpJXT2sSVlAQPOecfkpVqYwSzTvbT20TLkUAOzLECbeTZtQx0FnHAZV8O4TEWL3bz80jAg+r43DJq9Y2sbCPfU9JByAQPVlC3uuylk7j7++I9Vil4kPce26xn5VeIn4gNH3KP3pD2UDNpsZ292Uj0LbsKrFRwMN10wn7SxD5Wym9N7O8mxB0iCAVtOe7q7cmVxIdKSt1YBfttkH2+h33eQ/AZK/K5+ezLFtx1HQEwF9fAqiXYc/dx3Ntc9k3nfBP+TOBUNRe33cD+vIU8H/uzrWoK9tswlVE3ldEOCoFmjpDtVF3zoFrn9EkTHEw9B8jtjbjvisn68gsh+IJa1qkxSwWnglPBqeBUcCo4FZwKTgWngmMUnK01wflaEzxQa4Ktk99XI3r7rJWyE8H2H6zWW7InEO7/SKSnx56K7vpHgAEAUQBJ+2WPUPoAAAAASUVORK5CYII=" alt="">
           <div class="lsh_jia">
@@ -42,19 +42,25 @@
           <van-icon name="arrow" />
         </div>
       </div>
+      <van-overlay :show="lsh_show" @click="lsh_show = false">
+        <div class="lsh_over">
+          <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019nOCuarkJCx1576809262.png" alt="">
+        </div>
+
+      </van-overlay>
       <div class="lsh_menu">
         <ul class="lsh_wrap">
           <li>
             <p>课程相关</p>
             <ul>
-              <li>
+              <router-link to="/concern" tag="li">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABCCAYAAAABiBuRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mzg1NjM4NDI3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mzg1NjM4NDM3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozODU2Mzg0MDc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozODU2Mzg0MTc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj3yRNsAAAnZSURBVHja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" alt="">
                 <p>关注的老师</p>
-              </li>
-              <li>
+              </router-link>
+              <router-link tag="li" to="/collect">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA/CAYAAABXXxDfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mzk4NTM5OTU3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mzk4NTM5OTY3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozOTg1Mzk5Mzc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozOTg1Mzk5NDc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkRbHnAAAAgmSURBVHja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" alt="">
-                <p>关注的老师</p>
-              </li>
+                <p>我的收藏</p>
+              </router-link>
             </ul>
           </li>
           <li>
@@ -128,9 +134,17 @@
 <script>
     export default {
         name: "Person",
+        data(){
+          return{
+              lsh_show:false
+          }
+        },
         methods:{
           lsh_self(){
             this.$router.push("/info")
+          },
+          yueke(){
+            this.$router.push("/oto")
           }
         }
     }
@@ -141,6 +155,18 @@
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  .lsh_over{
+    width: 80%;
+    position: relative;
+    top: 20%;
+    left: 10%;
+
+    img{
+      width: 100%;
+      height:10.6rem;
+
+    }
   }
   .lsh_top{
     height: 4.35rem;
@@ -257,6 +283,7 @@
   .lsh_menu{
     padding: 0 0.4rem;
     .lsh_wrap{
+      width: 100%;
       &>li{
         padding: 0.3rem 0;
         border-bottom: 1px solid #f0f2f5;
