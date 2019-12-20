@@ -3,7 +3,11 @@
           <div class="zyz_wrapper">
               <div class="zyz_header">
                  <ul>
-                     <li><van-icon name="arrow-left" /></li>
+                     <li>
+                         <router-link to="/person">
+                           <van-icon name="arrow-left" />
+                         </router-link>
+                     </li>
                      <li>设置</li>
                      <li></li>
                  </ul>
@@ -17,7 +21,7 @@
                         <li><van-icon name="arrow" /></li>                
                     </ul>
                      </router-link>
-                    <button>退出登录</button>
+                    <button @click="exit">退出登录</button>
                 </div>
               </div>
               
@@ -32,9 +36,16 @@ export default {
     
     data(){
         return{
-
+        
         }
-    }
+    },
+    methods: {
+        exit(){
+            //退出登录
+            window.localStorage.clear("vuex");
+             this.$router.push({path:"/"});
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>

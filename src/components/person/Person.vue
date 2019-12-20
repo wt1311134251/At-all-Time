@@ -141,6 +141,14 @@
               lsh_show:false
           }
         },
+      mounted() {
+          window.mytimeout=setTimeout(()=>{
+            let zh=window.localStorage.getItem("vuex");
+            if(zh==null){
+                this.$router.push("/login")
+              }
+          },1000)
+        },
         methods:{
           lsh_self(){
             this.$router.push("/info")

@@ -55,6 +55,9 @@
           font-size: 0.2rem;
           padding-top: 0.1rem;
         }
+        &.router-link-active{
+          color: orange;
+        }
         img{
           width: 0.42rem;
           height: 0.38rem;

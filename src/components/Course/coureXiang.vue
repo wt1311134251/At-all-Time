@@ -3,13 +3,14 @@
         <div class="wt_header2">
             <ul>
                 <li>
-                    <van-icon name="arrow-left" size="0.3rem" />
+                    <van-icon name="arrow-left" size="0.3rem" @click="wt_fan"/>
                 </li>
                 <li>
                     <p>课程详情</p>
                 </li>
                 <li>
                     <img src="../../../static/wt_img/wt_06.png" alt="">
+                    
                 </li>
             </ul>
             
@@ -21,7 +22,8 @@
                 <p><span>共1课时</span>|4人已报名</p>
                 <p>开课时间：2019.12.14 08:00 - 2019.12.14 20:00</p>
                 <div class="wt_dw">
-                    <van-icon name="star-o" size="0.35rem"/>
+                    <van-icon name="star-o" size="0.35rem" @click="wt_tap()" v-show="!flag"/>
+                    <van-icon name="star"  size="0.35rem" color="#eb6100" @click="wt_tap()" v-show="flag"/>
                 </div>
             </div>
             <div class="wt_md2">
@@ -52,9 +54,31 @@
 import Vue from 'vue';
 import { Icon } from 'vant';
 export default {
+    // mounted() {
+    //     window.addEventListener('scroll',this.handleScroll)
+    // },
+    methods: {
+        wt_fan(){
+            this.$router.push('course')
+        },
+        wt_tap(){
+          this.flag=!this.flag
+          if(this.flag){
+            this.$toast.success('收藏成功');
+          }else {
+            this.$toast.success('取消收藏');
+          }
+
+        }
+        // handleScroll(){
+        //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
+        //     document.body.scrollTop
+        //     console.log(scrollTop)
+        // }
+    },
     data() {
         return {
-            
+            flag:true
         }
     },
 }
@@ -113,7 +137,7 @@ export default {
             overflow-y: auto;
             .wt_md1{
                 position: relative;
-                padding-top: 0.38rem;
+                padding: 0.30rem;
                 // padding-left: 0 0.3rem;
                 width: 100%;
                 height: 2.52rem;
@@ -237,24 +261,27 @@ export default {
             }
             .wt_md5{
                 margin-top: 0.3rem;
-                padding-top: 0.38rem;
+                padding: 0.1rem 0.2rem;
                 width: 100%;
-                height: 4rem;
+                height: 4.4rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    padding-top: 0.2rem;
+                    font-size: 0.30rem;
+                    font-weight: 500;
                     color: #262626;
-                    margin-left: 0.2rem;
-                    margin-bottom: 0.20rem;
+                    // margin-left: 0.2rem;
+                    // margin-bottom: 0.20rem;
                 }
                 img{
-                    width: 3.04rem;
+                    width: 3rem;
                     margin-left: 2.24rem;
                 }
                 p{
+                    margin-top: 0.4rem;
                     width: 7.5rem;
                     font-size: 0.3rem;
-                    color: #535353;
+                    color: #8c8c8c;
                     text-align: center;
                 }
             }

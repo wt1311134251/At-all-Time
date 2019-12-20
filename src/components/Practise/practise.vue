@@ -143,9 +143,9 @@
                             }
                         }
                         p:nth-child(3){
-                          img{
-                              width:100%;
-                          }
+                            img{
+                                width: 100%;
+                            }
                         }
                     }
           }
