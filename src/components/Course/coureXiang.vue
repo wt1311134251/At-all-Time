@@ -96,11 +96,7 @@ export default {
     },
     data() {
         return {
-<<<<<<< HEAD
           show:false
-=======
-            flag:true
->>>>>>> 376c38b772fc960394ba2e0634c341be98b5acb7
         }
     },
     mounted() {

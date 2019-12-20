@@ -5,7 +5,7 @@
           <li @click="lsh_self()" class="lsh_message">
             <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/avatar.jpg" alt="">
             <div class="lsh_phone">
-              <p>138****7626</p>
+              <p>{{phone}}</p>
             </div>
             <div class="lsh_yueke">
               <p @click.stop="yueke()">去约课</p>
@@ -138,7 +138,8 @@
         name: "Person",
         data(){
           return{
-              lsh_show:false
+              lsh_show:false,
+              phone:""
           }
         },
       mounted() {
@@ -148,6 +149,18 @@
                 this.$router.push("/login")
               }
           },1000)
+          let zh=window.localStorage.getItem("vuex");
+           if(zh!=null){
+                var phone =JSON.parse(zh).Login.phone;
+                var str = phone.split('');
+                for (let i = 0; i < str.length; i++) {
+                  if (i === 3 | i === 4 | i === 5 | i === 6) {
+                    str[i] = '*'
+                  }
+                }
+              this.phone=str.join('');
+           }
+        
         },
         methods:{
           lsh_self(){

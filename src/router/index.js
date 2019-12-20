@@ -50,7 +50,7 @@ export default new Router({
     {
       path:"/coureXiang",
       name:"coureXiang",
-      component:CoureXiang
+      component:Xiang
     },
     {
       path:"/concern",

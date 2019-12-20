@@ -27,13 +27,8 @@
     </div>
     <div class="wt_main">
       <ul>
-<<<<<<< HEAD
         <li>
           <router-link tag="div" class="wt_m1" to="/coureXiang">
-=======
-        <li @click="xiang">
-          <div class="wt_m1">
->>>>>>> 376c38b772fc960394ba2e0634c341be98b5acb7
             <h2>沈老师课堂（陈同学）</h2>
             <p class="wt_p1">
               <img src="../../../static/wt_img/wt_03.png" alt />
