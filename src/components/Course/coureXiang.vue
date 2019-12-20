@@ -21,9 +21,9 @@
         </div>
       <div class="wt_header2" v-show="!show">
         <ul>
-          <li>
-            <van-icon name="arrow-left" size="0.3rem" />
-          </li>
+          <router-link tag="li" to="/course">
+                    <van-icon name="arrow-left" size="0.3rem"/>
+        </router-link>
           <li>
             <p>课程详情</p>
           </li>
@@ -168,6 +168,7 @@ export default {
             flex-grow: 1;
             overflow-y: auto;
             .wt_md1{
+                box-sizing: border-box;
                 position: relative;
                 padding: 0.30rem;
                 // padding-left: 0 0.3rem;
@@ -175,14 +176,15 @@ export default {
                 height: 2.52rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    font-size: 0.30rem;
                     color: #262626;
-                    margin-left: 0.3rem;
-                    margin-bottom: 0.20rem;
+                    font-weight: 500;
+                    // margin-left: 0.3rem;
+                    margin-bottom: 0.1rem;
                 }
                 p:nth-child(2){
-                    margin-left: 0.3rem;
-                    font-size: 0.4rem;
+                    // margin-left: 0.3rem;
+                    font-size: 0.3rem;
                     color: #ed1515;
                     img{
                         width: 0.16rem;
@@ -191,14 +193,14 @@ export default {
 
                 }
                 p:nth-child(3){
-                    margin-left: 0.3rem;
+                    // margin-left: 0.3rem;
                     font-size: 0.3rem;
                     color: #858585;
-                    margin-top: 0.30rem;
-                    margin-bottom: 0.26rem;
+                    margin-top: 0.15rem;
+                    margin-bottom: 0.15rem;
                 }
                 p:nth-child(4){
-                    margin-left: 0.3rem;
+                    // margin-left: 0.3rem;
                     font-size: 0.3rem;
                     color: #858585;
                 }
@@ -216,8 +218,9 @@ export default {
                 height: 2.52rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    font-size: 0.30rem;
                     color: #262626;
+                    font-weight: 500;
                     margin-left: 0.2rem;
                     margin-bottom: 0.20rem;
                 }
@@ -241,8 +244,9 @@ export default {
                 height: 1.9rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    font-size: 0.30rem;
                     color: #262626;
+                    font-weight: 500;
                     margin-left: 0.2rem;
                     margin-bottom: 0.20rem;
                 }
@@ -255,8 +259,9 @@ export default {
                 height: 2.02rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    font-size: 0.30rem;
                     color: #262626;
+                    font-weight: 500;
                     margin-left: 0.2rem;
                     margin-bottom: 0.20rem;
                 }
