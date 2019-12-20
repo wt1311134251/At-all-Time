@@ -10,6 +10,7 @@
                 </li>
                 <li>
                     <img src="../../../static/wt_img/wt_06.png" alt="">
+                    
                 </li>
             </ul>
             
@@ -21,7 +22,8 @@
                 <p><span>共1课时</span>|4人已报名</p>
                 <p>开课时间：2019.12.14 08:00 - 2019.12.14 20:00</p>
                 <div class="wt_dw">
-                    <van-icon name="star-o" size="0.35rem"/>
+                    <van-icon name="star-o" size="0.35rem" @click="wt_tap()" v-show="!flag"/>
+                    <van-icon name="star"  size="0.35rem" color="#eb6100" @click="wt_tap()" v-show="flag"/>
                 </div>
             </div>
             <div class="wt_md2">
@@ -52,14 +54,31 @@
 import Vue from 'vue';
 import { Icon } from 'vant';
 export default {
+    // mounted() {
+    //     window.addEventListener('scroll',this.handleScroll)
+    // },
     methods: {
         wt_fan(){
             this.$router.push('course')
+        },
+        wt_tap(){
+          this.flag=!this.flag
+          if(this.flag){
+            this.$toast.success('收藏成功');
+          }else {
+            this.$toast.success('取消收藏');
+          }
+
         }
+        // handleScroll(){
+        //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
+        //     document.body.scrollTop
+        //     console.log(scrollTop)
+        // }
     },
     data() {
         return {
-            
+            flag:true
         }
     },
 }
