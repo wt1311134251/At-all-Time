@@ -48,6 +48,11 @@ export default new Router({
 
   routes: [
     {
+      path:"/coureXiang",
+      name:"coureXiang",
+      component:CoureXiang
+    },
+    {
       path:"/concern",
       name:"concern",
       component:Concern
@@ -102,7 +107,6 @@ export default new Router({
       name:"oto-plan",
       component:Otop
     },
- 
     {
       path:'/',
       name:'home',
