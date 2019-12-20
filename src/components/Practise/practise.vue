@@ -44,7 +44,6 @@
                   
                </div>
           </div>
-      practise
     </div>
 </template>
 
@@ -105,6 +104,7 @@
                         li{
                             width: 25%;
                             img{
+                                width: 50%;
                                 display: block;
                                 margin: .16rem auto;
                             }
@@ -140,6 +140,11 @@
                                 img{
                                     width: .20rem;
                                 }
+                            }
+                        }
+                        p:nth-child(3){
+                            img{
+                                width: 100%;
                             }
                         }
                     }

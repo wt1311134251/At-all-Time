@@ -63,6 +63,7 @@
     height: 100%;
     background: #f0f2f5;
     header{
+        z-index: 1000;
         width: 100%;
         height: 0.88rem;
         text-align: center;
