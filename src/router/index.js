@@ -32,8 +32,12 @@ import Concern from '../components/person/concer'
 import Collect from '../components/person/collect'
 
 Vue.use(Router);
+//引入订单页面
 import Dan from '../components/person/dan';
-
+//引入退出登录页面
+import Exit from '../components/person/exit';
+//引入更改密码页面
+import SETnew from '../components/person/set-new-pass';
 export default new Router({
   routes: [
     {
@@ -45,11 +49,6 @@ export default new Router({
       path:"/collect",
       name:"collect",
       component:Collect
-    },
-    {
-      path:"/teacher",
-      name:"teacher",
-      component:Teacher
     },
   {
       path:'/teacher',
@@ -131,6 +130,18 @@ export default new Router({
       name:"dan",
       component:Dan
     },
+      //退出登录
+    {
+      path:"/options",
+      name:"exit",
+      component:Exit
+    },
+      //更改密码页面
+      {
+        path:"/set-new-pass",
+        name:"set-new-pass",
+        component:SETnew
+      },
   ]
   })
 

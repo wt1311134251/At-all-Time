@@ -70,6 +70,7 @@
         background: #fff;
         color: #595959;
         position: absolute;
+        z-index: 1000;
         top: 0;
         h3{
             font-weight: normal;
