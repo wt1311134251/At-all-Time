@@ -21,9 +21,9 @@
         </div>
       <div class="wt_header2" v-show="!show">
         <ul>
-          <li>
-            <van-icon name="arrow-left" size="0.3rem" />
-          </li>
+          <router-link tag="li" to="/course">
+                    <van-icon name="arrow-left" size="0.3rem"/>
+        </router-link>
           <li>
             <p>课程详情</p>
           </li>
@@ -138,9 +138,7 @@ export default {
                justify-content: space-between;
               padding: 0 0.2rem;
                 align-items: center;
-                li:nth-child(1){
-
-                }
+                
                 li:nth-child(2){
                   width: 6.2rem;
                     text-align: center;
