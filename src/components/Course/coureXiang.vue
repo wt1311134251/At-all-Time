@@ -2,9 +2,9 @@
     <div class="wt_box2">
         <div class="wt_header2" v-show="show">
             <ul>
-                <li>
-                    <van-icon name="arrow-left" size="0.3rem" @click="wt_fan"/>
-                </li>
+                <router-link tag="li" to="/course">
+                    <van-icon name="arrow-left" size="0.3rem"/>
+                </router-link>
                 <li>
                     <a href="#z1">课程详情</a>
                     <a href="#z2">课程大纲</a>
@@ -15,7 +15,7 @@
               </li>
                 <li>
                     <img src="../../../static/wt_img/wt_06.png" alt="">
-                    
+
                 </li>
             </ul>
         </div>
@@ -72,13 +72,9 @@
 import Vue from 'vue';
 import { Icon } from 'vant';
 export default {
-    // mounted() {
-    //     window.addEventListener('scroll',this.handleScroll)
-    // },
+
     methods: {
-        wt_fan(){
-            this.$router.push('course')
-        },
+
         wt_tap(){
           this.flag=!this.flag
           if(this.flag){
@@ -87,34 +83,34 @@ export default {
             this.$toast.success('取消收藏');
           }
 
+
+        },
+      // 定义 滚动触发的方法
+      zlf_xiang_box() {
+        //距离top的距离<判断滚动top距离
+        var zlf_scr=document.getElementById("zlf_scr")
+        if(zlf_scr.offsetTop<zlf_scr.scrollTop){
+          this.show=true
+        }else {
+          this.show=false
         }
-        // handleScroll(){
-        //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
-        //     document.body.scrollTop
-        //     console.log(scrollTop)
-        // }
+
+      },
     },
     data() {
         return {
-          show:false
+          show:false,
+          flag:true
         }
     },
     mounted() {
       //监听window滚动的事件
       window.addEventListener('scroll', this.zlf_xiang_box,true);
     },
-      methods: {
-        // 定义 滚动触发的方法
-        zlf_xiang_box() {
-          //距离top的距离<判断滚动top距离
-          if(zlf_scr.offsetTop<zlf_scr.scrollTop){
-            this.show=true
-          }else {
-            this.show=false
-          }
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.zlf_xiang_box);   //  离开页面清除（移除）滚轮滚动事件
+    }
 
-        },
-      }
 }
 </script>
 <style lang="scss" scoped>
@@ -142,9 +138,7 @@ export default {
                justify-content: space-between;
               padding: 0 0.2rem;
                 align-items: center;
-                li:nth-child(1){
-
-                }
+              
                 li:nth-child(2){
                   width: 6.2rem;
                     text-align: center;
