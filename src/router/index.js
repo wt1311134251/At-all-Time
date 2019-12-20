@@ -22,11 +22,9 @@ import Info from '../components/person/info'
 import Setsex from '../components/person/setsex'
 //引入Class组件
 import Class from '../components/person/class'
-import Xiang from '../components/Course/coureXiang.vue'
-// <<<<<<< HEAD
+//引入课程详情页面
+import coureXiang from '../components/Course/coureXiang.vue'
 // import Record from '../components/Record/record'
-// =======
-
 import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
