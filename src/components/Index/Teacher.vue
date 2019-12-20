@@ -15,7 +15,8 @@
               <dd>
                 <h2>小华华 <span>M11</span></h2>
                 <p>女 8年教龄</p>
-                <button>关注</button>
+                <button @click="zlf_tap()" v-show="!flag">关注</button>
+                <button @click="zlf_tap()" v-show="flag">已关注</button>
               </dd>
             </dl>
           </div>
@@ -56,9 +57,21 @@
 <script>
     export default {
         name: "Teacher",
+      data(){
+          return {flag:false}
+      },
       methods:{
         zlf_ret(){
           this.$router.go(-1)
+        },
+        zlf_tap(){
+          this.flag=!this.flag
+          if(this.flag){
+            this.$toast.success('已关注');
+          }else {
+            this.$toast.success('已取消');
+          }
+
         }
       }
 
@@ -118,7 +131,7 @@
             dl {
               display: flex;
               background: #fff;
-              height: 1.46rem;
+              height: 1.26rem;
               width: 6.54rem;
               padding: 0.35rem 0.28rem 0;
               border-radius: 0.05rem;
@@ -164,11 +177,14 @@
                   outline: none;
                   border-radius: 0.25rem;
                   font-size: 0.26rem;
+                  &:nth-of-type(2){
+                    background: #fff;
+                    font-size: 0.3rem;
+                    color: #b7b7b7;
+                  }
                 }
               }
-
             }
-
           }
 
         }
