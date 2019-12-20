@@ -1,21 +1,39 @@
 <template>
     <div class="wt_box2">
-        <div class="wt_header2">
+        <div class="wt_header2" v-show="show">
             <ul>
+                <router-link tag="li" to="/course">
+                    <van-icon name="arrow-left" size="0.3rem"/>
+                </router-link>
                 <li>
-                    <van-icon name="arrow-left" size="0.3rem" @click="wt_fan"/>
+                    <a href="#z1">课程详情</a>
+                    <a href="#z2">课程大纲</a>
+                    <a href="#z3">课程评价</a>
                 </li>
-                <li>
-                    <p>课程详情</p>
-                </li>
+              <li>
+
+              </li>
                 <li>
                     <img src="../../../static/wt_img/wt_06.png" alt="">
-                    
+
                 </li>
             </ul>
-            
         </div>
-        <div class="wt_main2">
+      <div class="wt_header2" v-show="!show">
+        <ul>
+          <li>
+            <van-icon name="arrow-left" size="0.3rem" />
+          </li>
+          <li>
+            <p>课程详情</p>
+          </li>
+          <li>
+            <img src="../../../static/wt_img/wt_06.png" alt="">
+          </li>
+        </ul>
+      </div>
+
+        <div class="wt_main2" id="zlf_scr">
             <div class="wt_md1">
                 <h3>黄老师讲堂</h3>
                 <p><img src="../../../static/wt_img/wt_05.png" alt="">100.00</p>
@@ -32,15 +50,15 @@
                  <p>黄杰峰</p>
             </div>
             <div class="wt_md3">
-                <h3>课程介绍</h3>
+                <h3 id="z1">课程介绍</h3>
             </div>
-            <div class="wt_md4"> 
-                <h3>课程大纲</h3>
+            <div class="wt_md4">
+                <h3 id="z2">课程大纲</h3>
                 <div><span>.</span><p>回放</p><span>黄老师课堂</span></div>
                 <p class="wt_p1"><span>黄杰峰</span><span>12月14日08:00-20:00</span></p>
             </div>
             <div class="wt_md5">
-                <h3>课程评论</h3>
+                <h3 id="z3">课程评论</h3>
                 <img src="../../../static/wt_img/wt_07.png" alt="">
                 <p>暂无评论</p>
             </div>
@@ -54,13 +72,9 @@
 import Vue from 'vue';
 import { Icon } from 'vant';
 export default {
-    // mounted() {
-    //     window.addEventListener('scroll',this.handleScroll)
-    // },
+
     methods: {
-        wt_fan(){
-            this.$router.push('course')
-        },
+
         wt_tap(){
           this.flag=!this.flag
           if(this.flag){
@@ -69,18 +83,34 @@ export default {
             this.$toast.success('取消收藏');
           }
 
+
+        },
+      // 定义 滚动触发的方法
+      zlf_xiang_box() {
+        //距离top的距离<判断滚动top距离
+        var zlf_scr=document.getElementById("zlf_scr")
+        if(zlf_scr.offsetTop<zlf_scr.scrollTop){
+          this.show=true
+        }else {
+          this.show=false
         }
-        // handleScroll(){
-        //     let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
-        //     document.body.scrollTop
-        //     console.log(scrollTop)
-        // }
+
+      },
     },
     data() {
         return {
+          show:false,
             flag:true
         }
     },
+    mounted() {
+      //监听window滚动的事件
+      window.addEventListener('scroll', this.zlf_xiang_box,true);
+    },
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.zlf_xiang_box);   //  离开页面清除（移除）滚轮滚动事件
+    }
+
 }
 </script>
 <style lang="scss" scoped>
@@ -102,28 +132,32 @@ export default {
             background: #fff;
             margin-bottom: 0.01rem;
             ul{
-                width: 100%;
+
                 height: 100%;
                 display: flex;
+               justify-content: space-between;
+              padding: 0 0.2rem;
                 align-items: center;
                 li:nth-child(1){
-                    width: 10%;
-                    i{
-                        margin-left: 0.3rem;
-                    }
-                 
+
                 }
                 li:nth-child(2){
-                    flex: 1;
+                  width: 6.2rem;
                     text-align: center;
+                  font-size: 0.34rem;
+                  color: #4b4b4b;
                     p{
-                        font-size: 0.34rem;
-                        color: #4b4b4b;
-                        // margin-left: 2.54rem;
+                       width: 100%;
                     }
+                  display: flex;
+                  a{
+                    color: #4b4b4b;
+                    width: 2.06rem;
+                    line-height: 0.88rem;
+
+                  }
                 }
                 li:nth-child(3){
-                    width: 10%;
                     img{
                         width: 0.33rem;
                         height: 0.33rem;
@@ -262,7 +296,7 @@ export default {
                     color: #686868;
                     margin-left: 1rem;
                 }
-               
+
             }
             .wt_md5{
                 margin-top: 0.3rem;
@@ -290,7 +324,7 @@ export default {
                     text-align: center;
                 }
             }
-            
+
         }
         //尾部
         .wt_footer2{
