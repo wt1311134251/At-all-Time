@@ -22,6 +22,11 @@ import Info from '../components/person/info'
 import Setsex from '../components/person/setsex'
 //引入Class组件
 import Class from '../components/person/class'
+import Xiang from '../components/Course/coureXiang.vue'
+// <<<<<<< HEAD
+// import Record from '../components/Record/record'
+// =======
+
 import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
@@ -29,8 +34,8 @@ import Otop from '../components/Record/oto-plan'
 import Concern from '../components/person/concer'
 //引入 collect 页面（我的收藏）
 import Collect from '../components/person/collect'
-//引入  coureXiang
-import CoureXiang from "../components/Course/coureXiang"
+//引入登录页面
+import Login from '../components/person/login'
 
 Vue.use(Router);
 
@@ -40,6 +45,7 @@ Vue.use(Router);
 
 
 export default new Router({
+
   routes: [
     {
       path:"/coureXiang",
@@ -50,6 +56,11 @@ export default new Router({
       path:"/concern",
       name:"concern",
       component:Concern
+    },
+    {
+      path:"/login",
+      name:"login",
+      component:Login
     },
     {
       path:"/collect",
@@ -65,6 +76,11 @@ export default new Router({
       path:'/teacher',
       name:'teacher',
       component:Teacher
+    },
+    {
+      path:'/xiang',
+      name:'Xiang',
+      component:Xiang
     },
     {
       path:"/info",
@@ -120,6 +136,7 @@ export default new Router({
           name:"person",
           component:Person,
         },
+
         //  练习
         {
           path:'practise',

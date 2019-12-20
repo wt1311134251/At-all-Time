@@ -3,7 +3,7 @@
     <div class="wt_header">
       <div>
         <h1>特色课</h1>
-        <img src="../../../static/wt_img/wt_01.png" alt />
+        <img src="../../../static/wt_img/wt_01.png" alt @click="wt_tiao" />
       </div>
       <div class="wt_kong">
         <ul>
@@ -27,8 +27,13 @@
     </div>
     <div class="wt_main">
       <ul>
+<<<<<<< HEAD
         <li>
           <router-link tag="div" class="wt_m1" to="/coureXiang">
+=======
+        <li @click="xiang">
+          <div class="wt_m1">
+>>>>>>> 376c38b772fc960394ba2e0634c341be98b5acb7
             <h2>沈老师课堂（陈同学）</h2>
             <p class="wt_p1">
               <img src="../../../static/wt_img/wt_03.png" alt />
@@ -134,9 +139,7 @@
         </li>
       </ul>
     </div>
-    <div class="wt_footer">
-      <p>底部</p>
-    </div>
+    
   </div>
 </template>
 
@@ -146,6 +149,14 @@ import { DropdownMenu, DropdownItem } from "vant";
 
 Vue.use(DropdownMenu).use(DropdownItem);
 export default {
+  methods: {
+    wt_tiao(){
+      this.$router.push('search')
+    },
+    xiang(){
+      this.$router.push('xiang')
+    }
+  },
   data() {
     return {
       value1: 0,
