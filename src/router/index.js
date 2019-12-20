@@ -29,6 +29,8 @@ import Otop from '../components/Record/oto-plan'
 import Concern from '../components/person/concer'
 //引入 collect 页面（我的收藏）
 import Collect from '../components/person/collect'
+//引入  coureXiang
+import CoureXiang from "../components/Course/coureXiang"
 
 Vue.use(Router);
 
@@ -39,6 +41,11 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
+    {
+      path:"/coureXiang",
+      name:"coureXiang",
+      component:CoureXiang
+    },
     {
       path:"/concern",
       name:"concern",
@@ -89,7 +96,6 @@ export default new Router({
       name:"oto-plan",
       component:Otop
     },
- 
     {
       path:'/',
       name:'home',

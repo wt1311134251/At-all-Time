@@ -28,25 +28,25 @@
     <div class="wt_main">
       <ul>
         <li>
-          <div class="wt_m1">
+          <router-link tag="div" class="wt_m1" to="/coureXiang">
             <h2>沈老师课堂（陈同学）</h2>
             <p class="wt_p1">
               <img src="../../../static/wt_img/wt_03.png" alt />
               <span>12月14日 17：00~12月14日22:00</span>|
               <span>共1课时</span>
             </p>
-            <div class="wt_d1">
+            <router-link tag="div" class="wt_d1" to="/coureXiang">
               <img src="../../../static/wt_img/wt_04.png" alt />
               <p>绳华侨</p>
-            </div>
-            <div class="wt_d2">
+            </router-link>
+            <router-link tag="div" class="wt_d2" to="/coureXiang">
               <p>2人已报名</p>
               <p>
                 <img src="../../../static/wt_img/wt_05.png" alt />
                 <span>100.00</span>
               </p>
-            </div>
-          </div>
+            </router-link>
+          </router-link>
         </li>
         <li>
           <div class="wt_m1">
@@ -275,7 +275,7 @@ export default {
         div{
             span{
                 .van-dropdown-menu__title{
-                    font-size: 0.5rem;        
+                    font-size: 0.5rem;
                 }
             }
         }
