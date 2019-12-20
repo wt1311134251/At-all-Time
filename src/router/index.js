@@ -89,11 +89,7 @@ export default new Router({
       name:"oto-plan",
       component:Otop
     },
-    {
-      path:'/otoPlan',
-      name:"otoPlan",
-      component:otoPlan
-    },
+ 
     {
       path:'/',
       name:'home',
