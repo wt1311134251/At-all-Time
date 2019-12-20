@@ -82,7 +82,6 @@ export default {
 </script>
 
 <style lang='scss'>
-
 .oto{
     width: 100%;
     height: 100%;

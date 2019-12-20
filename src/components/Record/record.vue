@@ -58,7 +58,6 @@
 </script>
 
 <style lang='scss'>
-
 .record{
     width: 100%;
     height: 100%;
