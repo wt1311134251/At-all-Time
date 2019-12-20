@@ -3,7 +3,7 @@
         <div class="wt_header2">
             <ul>
                 <li>
-                    <van-icon name="arrow-left" size="0.3rem" />
+                    <van-icon name="arrow-left" size="0.3rem" @click="wt_fan"/>
                 </li>
                 <li>
                     <p>课程详情</p>
@@ -52,6 +52,11 @@
 import Vue from 'vue';
 import { Icon } from 'vant';
 export default {
+    methods: {
+        wt_fan(){
+            this.$router.push('course')
+        }
+    },
     data() {
         return {
             
