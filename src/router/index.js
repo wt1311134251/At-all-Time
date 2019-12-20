@@ -27,10 +27,14 @@ import Xiang from '../components/Course/coureXiang.vue'
 // import Record from '../components/Record/record'
 // =======
 
-// >>>>>>> d9fc6b9170fd23210b4c33d5c6fb3c1301d5e17d
 import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
+//引入concern页面（关注的老师）
+import Concern from '../components/person/concer'
+//引入 collect 页面（我的收藏）
+import Collect from '../components/person/collect'
+
 Vue.use(Router);
 
 
@@ -41,6 +45,21 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
+      path:"/concern",
+      name:"concern",
+      component:Concern
+    },
+    {
+      path:"/collect",
+      name:"collect",
+      component:Collect
+    },
+    {
+      path:"/teacher",
+      name:"teacher",
+      component:Teacher
+    },
+  {
       path:'/teacher',
       name:'teacher',
       component:Teacher
@@ -65,11 +84,6 @@ export default new Router({
       name:"class",
       component:Class,
     },
-    // {
-    //   path:"/",
-    //   name: 'home',
-    //   component:Record
-    // },
     {
       path:'/oto',
       name:'oto',
@@ -126,7 +140,7 @@ export default new Router({
   ]
   })
 
-      
+
 
 
 
