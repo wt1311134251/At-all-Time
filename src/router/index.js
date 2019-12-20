@@ -22,7 +22,11 @@ import Info from '../components/person/info'
 import Setsex from '../components/person/setsex'
 //引入Class组件
 import Class from '../components/person/class'
+// <<<<<<< HEAD
+// import Record from '../components/Record/record'
+// =======
 
+// >>>>>>> d9fc6b9170fd23210b4c33d5c6fb3c1301d5e17d
 import Oto from '../components/Record/oto'
 import Search from '../components/Record/Search'
 import Otop from '../components/Record/oto-plan'
@@ -55,6 +59,11 @@ export default new Router({
       name:"class",
       component:Class,
     },
+    // {
+    //   path:"/",
+    //   name: 'home',
+    //   component:Record
+    // },
     {
       path:'/oto',
       name:'oto',
@@ -107,8 +116,11 @@ export default new Router({
           component:Record
         }
       ]
-
-
     }
   ]
-})
+  })
+
+      
+
+
+
