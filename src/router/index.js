@@ -55,7 +55,11 @@ export default new Router({
       name:"teacher",
       component:Teacher
     },
-
+  {
+      path:'/teacher',
+      name:'teacher',
+      component:Teacher
+    },
     {
       path:"/info",
       name:"info",
