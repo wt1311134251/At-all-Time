@@ -137,7 +137,7 @@ export default {
             overflow-y: auto;
             .wt_md1{
                 position: relative;
-                padding-top: 0.38rem;
+                padding: 0.30rem;
                 // padding-left: 0 0.3rem;
                 width: 100%;
                 height: 2.52rem;
@@ -261,24 +261,27 @@ export default {
             }
             .wt_md5{
                 margin-top: 0.3rem;
-                padding-top: 0.38rem;
+                padding: 0.1rem 0.2rem;
                 width: 100%;
-                height: 4rem;
+                height: 4.4rem;
                 background: #fff;
                 h3{
-                    font-size: 0.36rem;
+                    padding-top: 0.2rem;
+                    font-size: 0.30rem;
+                    font-weight: 500;
                     color: #262626;
-                    margin-left: 0.2rem;
-                    margin-bottom: 0.20rem;
+                    // margin-left: 0.2rem;
+                    // margin-bottom: 0.20rem;
                 }
                 img{
-                    width: 3.04rem;
+                    width: 3rem;
                     margin-left: 2.24rem;
                 }
                 p{
+                    margin-top: 0.4rem;
                     width: 7.5rem;
                     font-size: 0.3rem;
-                    color: #535353;
+                    color: #8c8c8c;
                     text-align: center;
                 }
             }
